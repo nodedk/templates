@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+}
+
+main {
+  padding: 2rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav a {
+  margin: 0 0.5rem;
+}

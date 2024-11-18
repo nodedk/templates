@@ -5,4 +5,5 @@ bundle:
     - /js/util.js
     - /js/app.js
   css:
-    - /css/build/app.css
+    - /css/reset.css
+    - /css/app.css

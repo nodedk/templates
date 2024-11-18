@@ -1,20 +1,11 @@
-module.exports = async function($) {
-  $.page.title = 'Create incredible web apps'
+module.exports = async function ($) {
+  $.page.title = 'Ready to create'
 
-  return /* html */`
-    <style>
-      main {
-        text-align: center;
-      }
-      img.waveorb-logo {
-        max-height: 174px;
-        max-width: 90%;
-      }
-    </style>
-    <div>
-      <img class="waveorb-logo" src="/img/waveorb-logo-full.svg" height="174" alt="waveorb-logo">
-      <h1>Create incredible web apps</h1>
-      <p>The complete framework for building fast applications.</p>
-    </div>
+  return /* HTML */ `
+    <h1>Welcome to your new application.</h1>
+    <p>Are you excited to get started?</p>
+    <p>
+      <a href="https://ndk.sh">Here is the documentation! 🌟</a>
+    </p>
   `
 }
