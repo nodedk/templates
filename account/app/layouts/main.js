@@ -1,6 +1,6 @@
-module.exports = async function($) {
-  return /* html */`
-    <!doctype html>
+module.exports = async function ($) {
+  return /* HTML */ `
+    <!DOCTYPE html>
     <html lang="${$.lang}">
       ${$.app.views.layout.head($)}
       <body>
@@ -26,7 +26,9 @@ module.exports = async function($) {
         <footer>
           Made by <a href="https://eldoy.com">Eldøy Projects</a>, Oslo, Norway
         </footer>
-        <script>flash()</script>
+        <script>
+          flash()
+        </script>
       </body>
     </html>
   `

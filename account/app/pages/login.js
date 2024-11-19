@@ -18,21 +18,31 @@ module.exports = async function ($) {
     button.disabled = false
   }
 
-  return /* html */ `
+  return /* HTML */ `
     <div id="page-login">
       <form class="login-form" onsubmit="return false">
         <p>
           <label for="email">${$.t('login.form.email')}</label>
           <span class="star" title="required">*</span>
-          <br>
-          <input id="email" name="email" type="email" oninput="clearErrors(this)">
+          <br />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            oninput="clearErrors(this)"
+          />
           <em class="email-errors"></em>
         </p>
         <p>
           <label for="password">${$.t('login.form.password')}</label>
           <span class="star" title="required">*</span>
-          <br>
-          <input id="password" name="password" type="password" oninput="clearErrors(this)">
+          <br />
+          <input
+            id="password"
+            name="password"
+            type="password"
+            oninput="clearErrors(this)"
+          />
           <em class="password-errors"></em>
         </p>
         <p>

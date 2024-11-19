@@ -1,10 +1,11 @@
-module.exports = async function($) {
-  return /* html */ `
-    <!doctype html>
+module.exports = async function ($) {
+  return /* HTML */ `
+    <!DOCTYPE html>
     <html lang="${$.lang}">
       ${$.app.views.layout.head($)}
-      <body><main>${$.page.content}</main></body>
+      <body>
+        <main>${$.page.content}</main>
+      </body>
     </html>
   `
-
 }

@@ -1,4 +1,4 @@
-module.exports = async function($) {
+module.exports = async function ($) {
   await $.setups(['account', 'login-required'])
 
   $.page.title = 'Delete todo'
@@ -17,18 +17,19 @@ module.exports = async function($) {
 
   async function renderForm() {
     const item = await api('/todo/get', { query: { id } })
-    html('form', /* html */`
-      <p>
-        Really delete <mark>&rdquo;${esc(item.task)}&rdquo;</mark>?
-      </p>
-      <p>
-        <button onclick="handleDelete(this)">Delete</button>
-        <a href="/todo/list">Cancel</a>
-      </p>
-    `)
+    html(
+      'form',
+      /* HTML */ `
+        <p>Really delete <mark>&rdquo;${esc(item.task)}&rdquo;</mark>?</p>
+        <p>
+          <button onclick="handleDelete(this)">Delete</button>
+          <a href="/todo/list">Cancel</a>
+        </p>
+      `
+    )
   }
 
-  return /* html */`
+  return /* HTML */ `
     <h1>Delete todo</h1>
     <form onsubmit="return false"></form>
     <script>

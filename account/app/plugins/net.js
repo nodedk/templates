@@ -1,6 +1,5 @@
-// Set up dugg for upload to Amazon S3
-const dugg = require('dugg')
+var s3 = require('@nodedk/s3')
 
-module.exports = function(app) {
-  return dugg(app.config.upload)
+module.exports = function (app) {
+  return s3(app.config.upload)
 }

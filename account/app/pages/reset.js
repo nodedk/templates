@@ -5,21 +5,31 @@ module.exports = async function ($) {
   $.page.layout = 'dialog'
   $.page.login = false
 
-  return /* html */`
+  return /* HTML */ `
     <p id="loader">Please wait, verifying key...</p>
     <form onsubmit="return false" style="display:none">
       <p>
         <label for="password">${$.t('reset.password')}</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="password" name="password" type="password" oninput="clearErrors(this)">
+        <br />
+        <input
+          id="password"
+          name="password"
+          type="password"
+          oninput="clearErrors(this)"
+        />
         <em class="password-errors"></em>
       </p>
       <p>
         <label for="confirm">Confirm Password</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="confirm" name="confirm" type="password" oninput="clearErrors(this)">
+        <br />
+        <input
+          id="confirm"
+          name="confirm"
+          type="password"
+          oninput="clearErrors(this)"
+        />
         <em class="confirm-errors"></em>
       </p>
       <p>

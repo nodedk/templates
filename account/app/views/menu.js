@@ -1,28 +1,30 @@
-const esc = require('escape-html')
-const shortn = require('shortn')
+var { esc } = require('@nodedk/element')
 
-module.exports = function($) {
-  return /* html */`
+module.exports = function ($) {
+  return /* HTML */ `
     <div id="menu">
-      <a id="toggler" onclick="handleToggleMenu()" href="javascript:void(0)" data-toggle="#main-menu">
+      <a
+        id="toggler"
+        onclick="handleToggleMenu()"
+        href="javascript:void(0)"
+        data-toggle="#main-menu"
+      >
         Menu
       </a>
       <div id="main-menu">
-        ${function(){
+        ${(function () {
           if ($.account) {
-            return /* html */`
+            return /* HTML */ `
               <a href="${$.link('profile')}">Profile</a>
               <a href="${$.link('account')}">Account</a>
               <a href="${$.link('logout')}">Logout</a>
             `
           }
-          return /* html */`
+          return /* HTML */ `
             <a href="${$.link('login')}">Login</a>
             <a href="${$.link('signup')}">Signup</a>
           `
-
-        }()}
-
+        })()}
       </div>
     </div>
   `

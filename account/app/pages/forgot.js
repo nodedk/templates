@@ -17,13 +17,18 @@ module.exports = async function ($) {
     location = '/login'
   }
 
-  return /* html */ `
+  return /* HTML */ `
     <form onsubmit="return false">
       <p>
         <label for="email">${$.t('forgot.email')}</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="email" type="text" name="email" oninput="clearErrors(this)">
+        <br />
+        <input
+          id="email"
+          type="text"
+          name="email"
+          oninput="clearErrors(this)"
+        />
         <em class="email-errors"></em>
       </p>
       <p>

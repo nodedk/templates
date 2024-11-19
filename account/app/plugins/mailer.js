@@ -1,5 +1,5 @@
-const wmailer = require('waveorb-mailer')
+var mail = require('@nodedk/mail')
 
-module.exports = function(app) {
-  return wmailer(app.config.mail)
+module.exports = function (app) {
+  return mail(app.config.mail)
 }

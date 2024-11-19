@@ -1,6 +1,6 @@
 module.exports = async function ($) {
-  return /* html */ `
-    <!doctype html>
+  return /* HTML */ `
+    <!DOCTYPE html>
     <html lang="${$.lang}">
       ${$.app.views.layout.head($)}
       <body id="dialog-layout">

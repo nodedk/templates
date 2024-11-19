@@ -14,7 +14,7 @@
     "cmd": "ndk cmd",
     "migrate": "ndk migrate",
     "locales": "ndk locales",
-    "install": "ndk install"
+    "install": "node install.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   },
   "author": "",
   "dependencies": {
-    "@nodedk/app": "file:../../app"
+    "@nodedk/app": "^0.1.0"
   }
 }

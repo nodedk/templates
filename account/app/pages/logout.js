@@ -1,4 +1,4 @@
-module.exports = async function($) {
+module.exports = async function ($) {
   $.page.title = 'Logging out...'
   $.page.layout = 'redirect'
 
@@ -15,7 +15,7 @@ module.exports = async function($) {
     }
   }
 
-  return /* html */`
+  return /* HTML */ `
     <script>
       ${handleLogout}
       handleLogout()

@@ -29,38 +29,55 @@ module.exports = async function ($) {
     handleLogin(values)
   }
 
-  return /* html */ `
+  return /* HTML */ `
     <form class="signup-form" onsubmit="return false">
       <p>
         <label for="name">${$.t('signup.form.name')}</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="name" name="name" type="text" oninput="clearErrors(this)">
+        <br />
+        <input id="name" name="name" type="text" oninput="clearErrors(this)" />
         <em class="name-errors"></em>
       </p>
       <p>
         <label for="email">${$.t('signup.form.email')}</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="email" name="email" type="email" oninput="clearErrors(this)">
+        <br />
+        <input
+          id="email"
+          name="email"
+          type="email"
+          oninput="clearErrors(this)"
+        />
         <em class="email-errors"></em>
       </p>
       <p>
         <label for="password">${$.t('signup.form.password')}</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="password" name="password" type="password" oninput="clearErrors(this)">
+        <br />
+        <input
+          id="password"
+          name="password"
+          type="password"
+          oninput="clearErrors(this)"
+        />
         <em class="password-errors"></em>
       </p>
       <p>
         <label for="confirm">Confirm Password</label>
         <span class="star" title="required">*</span>
-        <br>
-        <input id="confirm" name="confirm" type="password" oninput="clearErrors(this)">
+        <br />
+        <input
+          id="confirm"
+          name="confirm"
+          type="password"
+          oninput="clearErrors(this)"
+        />
         <em class="confirm-errors"></em>
       </p>
       <p>
-        <button onclick="handleSignup(this)">${$.t('signup.form.button')}</button>
+        <button onclick="handleSignup(this)">
+          ${$.t('signup.form.button')}
+        </button>
       </p>
     </form>
     <p>
