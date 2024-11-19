@@ -1,9 +1,5 @@
-module.exports = async function($) {
-  await $.filters([
-    'setup-site',
-    'authenticate',
-    'guest-required'
-  ])
+module.exports = async function ($) {
+  await $.filters(['setup-site', 'authenticate', 'guest-required'])
 
   await $.allow({
     query: ['key']
@@ -12,7 +8,7 @@ module.exports = async function($) {
   await $.validate({
     query: {
       key: {
-        matcher: async function(key, $) {
+        matcher: async function (key, $) {
           $.reset = await $.db('reset').get({ key })
           if (!$.reset) {
             return 'key is invalid'

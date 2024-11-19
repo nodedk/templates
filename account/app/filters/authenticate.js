@@ -1,5 +1,4 @@
-module.exports = async function($) {
-
+module.exports = async function ($) {
   // Authenticate by api key
   const apikey = $.params.apikey
   if (apikey && apikey == $.app.config.env.apikey) {
@@ -16,7 +15,8 @@ module.exports = async function($) {
   }
 
   // Authenticate by token
-  const token = $.params.auth || $.req.headers['authorization'] || $.req.cookie('login')
+  const token =
+    $.params.auth || $.req.headers['authorization'] || $.req.cookie('login')
   if (token && !$.account) {
     const login = await $.db('login').get({ token })
     if (login && login.account_id) {

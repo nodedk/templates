@@ -5,4 +5,11 @@ bundle:
     - /js/util.js
     - /js/app.js
   css:
-    - /css/build/app.css
+    - /css/base.css
+    - /css/app.css
+    - /css/account.css
+    - /css/tags.css
+    - /css/dialog.css
+    - /css/form.css
+    - /css/loader.css
+    - /css/spinner.css

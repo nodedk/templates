@@ -1,4 +1,4 @@
-module.exports = async function($) {
+module.exports = async function ($) {
   await $.filters([
     'setup-site',
     'authenticate',
@@ -11,7 +11,7 @@ module.exports = async function($) {
 
   await $.net.upload($.files, options)
 
-  return $.files.map(f => ({
+  return $.files.map((f) => ({
     name: f.name,
     type: f.type,
     size: f.size,

@@ -1,9 +1,5 @@
-module.exports = async function($) {
-  await $.filters([
-    'setup-site',
-    'authenticate',
-    'guest-required'
-  ])
+module.exports = async function ($) {
+  await $.filters(['setup-site', 'authenticate', 'guest-required'])
 
   await $.allow({
     values: ['email', 'password']
@@ -23,7 +19,7 @@ module.exports = async function($) {
   })
 
   const { values = {} } = $.params
-  const { email = '', password = '' } =  values
+  const { email = '', password = '' } = values
 
   const account = await $.db('account').get({ email })
   if (!account) {

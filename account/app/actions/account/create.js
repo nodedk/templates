@@ -1,11 +1,7 @@
 const crypto = require('crypto')
 
-module.exports = async function($) {
-  await $.filters([
-    'setup-site',
-    'authenticate',
-    'guest-required'
-  ])
+module.exports = async function ($) {
+  await $.filters(['setup-site', 'authenticate', 'guest-required'])
 
   await $.allow({ values: ['email', 'name', 'password', 'confirm'] })
 
@@ -14,8 +10,11 @@ module.exports = async function($) {
       email: {
         required: true,
         is: 'email',
-        matcher: async function(email, $) {
-          if ($.app.config.invites.length && !$.app.config.invites.includes(email)) {
+        matcher: async function (email, $) {
+          if (
+            $.app.config.invites.length &&
+            !$.app.config.invites.includes(email)
+          ) {
             return 'email is not on the invite list'
           }
         },
@@ -32,7 +31,7 @@ module.exports = async function($) {
       confirm: {
         required: true,
         min: 8,
-        matcher: async function(confirm, $) {
+        matcher: async function (confirm, $) {
           if (confirm !== $.params.values?.password) {
             return 'does not match password'
           }

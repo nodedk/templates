@@ -3,7 +3,7 @@ var { esc } = require('@nodedk/element')
 module.exports = function avatar({ image, name, color }, opt = {}) {
   if (!opt.size) opt.size = ''
   return /* HTML */ `
-    <div class="blokk-avatar">
+    <div class="tag-avatar">
       ${(function () {
         if (image) {
           return /* HTML */ ` <img class="${opt.size}" src="${esc(image)}" /> `

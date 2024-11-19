@@ -1,9 +1,5 @@
-module.exports = async function($) {
-  await $.filters([
-    'setup-site',
-    'authenticate',
-    'login-required'
-  ])
+module.exports = async function ($) {
+  await $.filters(['setup-site', 'authenticate', 'login-required'])
 
   await $.allow({ query: ['id'] })
 
@@ -13,7 +9,7 @@ module.exports = async function($) {
         required: true,
         is: 'id',
         exist: 'account',
-        matcher: async function(id, $) {
+        matcher: async function (id, $) {
           if (id != $.account.id) {
             return 'id does not match current login'
           }

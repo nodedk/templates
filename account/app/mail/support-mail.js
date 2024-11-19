@@ -1,12 +1,14 @@
-module.exports = async function($, data) {
+module.exports = async function ($, data) {
   return {
     format: 'markdown',
     content: `
       ${data.content}
-      ${(function() {
+      ${(function () {
         if ($.account) {
           return `
-            account: ${$.account?.name || 'no name'} (${$.account?.email || 'no email'})
+            account: ${$.account?.name || 'no name'} (${
+            $.account?.email || 'no email'
+          })
           `
         }
         return ''

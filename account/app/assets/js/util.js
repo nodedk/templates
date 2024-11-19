@@ -14,7 +14,7 @@ async function load(path, into) {
 }
 
 function sleep(time, s = 0.5) {
-  return new Promise(r => setTimeout(r, s*1000))
+  return new Promise((r) => setTimeout(r, s * 1000))
 }
 
 function clearErrors(field) {
@@ -30,7 +30,9 @@ function clearErrors(field) {
 function showErrors(result, options = {}) {
   if (!result.error) return
   options = Object.assign({ class: 'error' }, options)
-  qa('form em', function(el) { text(el, '') })
+  qa('form em', function (el) {
+    text(el, '')
+  })
   flash(result.error.message, options)
   for (var key in result) {
     if (key !== 'error') {
@@ -79,18 +81,20 @@ function toggleVisibility(options = {}, fn) {
   var priv = options.priv || 'private'
   var selector = '.' + pub + ',.' + priv
   var session = cookie(options.cookie || 'session')
-  var toggle = fn || function(el) {
-    var isPublic = el.classList.contains(pub)
-    var isPrivate = el.classList.contains(priv)
-    if (session && isPublic || !session && isPrivate) {
-      el.style.display = 'none'
+  var toggle =
+    fn ||
+    function (el) {
+      var isPublic = el.classList.contains(pub)
+      var isPrivate = el.classList.contains(priv)
+      if ((session && isPublic) || (!session && isPrivate)) {
+        el.style.display = 'none'
+      }
     }
-  }
   document.querySelectorAll(selector).forEach(toggle)
 }
 
 function setActiveLink(options = {}) {
-  document.querySelectorAll(options.selector || 'a').forEach(function(el) {
+  document.querySelectorAll(options.selector || 'a').forEach(function (el) {
     if (el.pathname == location.pathname) {
       el.classList.add(options.active || 'active')
     }
@@ -104,13 +108,14 @@ function handleLogout(options = {}, fn) {
 }
 
 function handleToggleMenu() {
-  q('#main-menu', el => el.classList.toggle('open'))
+  q('#main-menu', (el) => el.classList.toggle('open'))
 }
 
 function handleCloseMenus(event) {
   event.stopPropagation()
-  var el = event.target, toggle
-  while(el) {
+  var el = event.target,
+    toggle
+  while (el) {
     if (el.classList.contains('open')) return
     var menu = el.getAttribute('data-toggle')
     if (menu) {
@@ -119,7 +124,7 @@ function handleCloseMenus(event) {
     }
     el = el.parentElement
   }
-  qa('.open', item => {
+  qa('.open', (item) => {
     if (item != toggle) {
       item.classList.remove('open')
     }

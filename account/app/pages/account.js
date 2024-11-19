@@ -32,7 +32,7 @@ module.exports = async function ($) {
     if (result.image) {
       account.image = result.image
       var image = html('.account-image', avatar(account, { size: 'medium' }))
-      html('#menu .blokk-avatar', avatar(account))
+      html('#menu .tag-avatar', avatar(account))
     }
   }
 

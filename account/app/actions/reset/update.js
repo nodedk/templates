@@ -1,9 +1,5 @@
-module.exports = async function($) {
-  await $.filters([
-    'setup-site',
-    'authenticate',
-    'guest-required'
-  ])
+module.exports = async function ($) {
+  await $.filters(['setup-site', 'authenticate', 'guest-required'])
 
   await $.allow({
     query: ['key'],
@@ -14,7 +10,7 @@ module.exports = async function($) {
     query: {
       key: {
         required: true,
-        matcher: async function(key, $) {
+        matcher: async function (key, $) {
           $.reset = await $.db('reset').get({ key })
           if (!$.reset) {
             return 'key is invalid'
@@ -34,7 +30,7 @@ module.exports = async function($) {
       confirm: {
         required: true,
         min: 8,
-        matcher: async function(confirm, $) {
+        matcher: async function (confirm, $) {
           if (confirm !== $.params.values?.password) {
             return 'does not match password'
           }

@@ -8,7 +8,7 @@ module.exports = async function ($) {
       applications.
     </p>
     <p>
-      <a href="https://ndk.sh"> Learn more about NodeDK here 🚀</a>
+      <a href="https://ndk.sh"> Learn more about NodeDK here.</a>
     </p>
   `
 }

@@ -8,7 +8,9 @@ module.exports = async function ($) {
           <nav>
             <div>
               <a href="${$.link('index')}">
-                <!-- <img src="/img/7i-logo.svg" height="30" width="30" style="height:30px;vertical-align:middle;margin-right:0.5rem"> -->
+                ${
+                  '' /* <img src="/img/logo.svg" height="30" width="30" style="height:30px;vertical-align:middle;margin-right:0.5rem">*/
+                }
                 Home
               </a>
               <a href="${$.link('about')}">About</a>
@@ -24,7 +26,7 @@ module.exports = async function ($) {
         <div class="notify"><div class="flash" id="flash"></div></div>
         <main>${$.page.content}</main>
         <footer>
-          Made by <a href="https://eldoy.com">Eldøy Projects</a>, Oslo, Norway
+          Made by <a href="https://eldoy.com">Eldøy Tech AS</a>, Oslo, Norway
         </footer>
         <script>
           flash()

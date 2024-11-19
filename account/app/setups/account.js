@@ -1,5 +1,4 @@
-module.exports = async function($) {
-
+module.exports = async function ($) {
   const token = $.req.cookie('login')
   if (!token) {
     return
