@@ -15,19 +15,15 @@ module.exports = async function ($) {
       }
     }
   })
-  const { values = {} } = $.params
-  const { email, subject, content } = values
+  var { values = {} } = $.params
+  var { email, subject, content } = values
   if (process.env.NODE_ENV != 'test') {
-    $.mailer.send(
-      'support-mail',
-      $,
-      {
-        subject,
-        to: email,
-        from: $.app.config.env.email
-      },
-      { content }
-    )
+    $.mailer.send({
+      text: content,
+      subject,
+      to: email,
+      from: $.app.config.env.email
+    })
   }
   return await $.db('support').create(values)
 }
