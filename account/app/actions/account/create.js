@@ -50,6 +50,7 @@ module.exports = async function ($) {
   if (process.env.NODE_ENV != 'test') {
     $.mailer.send({
       html: $.app.mail.signup($),
+      subject: 'Welcome',
       to: email,
       from: $.app.config.env.email
     })
