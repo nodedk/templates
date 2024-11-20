@@ -1,0 +1,9 @@
+bundle:
+  js:
+    - /js/element.js
+    - /js/client.js
+    - /js/window.js
+    - /js/app.js
+  css:
+    - /css/base.css
+    - /css/app.css

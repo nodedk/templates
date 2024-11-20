@@ -1,14 +1,14 @@
-(function() {
-  var http = function(url, params, options) {
-    return new Promise(function(resolve, reject) {
+;(function () {
+  var http = function (url, params, options) {
+    return new Promise(function (resolve, reject) {
       if (!options) options = {}
       if (!params) params = {}
       var xhr = new XMLHttpRequest()
-      xhr.addEventListener('load', function() {
+      xhr.addEventListener('load', function () {
         var json = JSON.parse(xhr.responseText)
         resolve(json)
       })
-      xhr.addEventListener('error', function() {
+      xhr.addEventListener('error', function () {
         reject(xhr)
       })
       xhr.open(options.method || 'POST', url + (options.path || ''))
@@ -25,8 +25,8 @@
           data.append('file', file, file.name)
         }
         if (options.progress) {
-          xhr.upload.addEventListener('progress', function(event) {
-            event.percent = (event.loaded / event.total * 100).toFixed(2)
+          xhr.upload.addEventListener('progress', function (event) {
+            event.percent = ((event.loaded / event.total) * 100).toFixed(2)
             options.progress(event)
           })
         }
@@ -42,10 +42,10 @@
       xhr.withCredentials = true
       xhr.send(data || JSON.stringify(params))
     })
-  };
-  window.waveorb = function(host) {
-    return function(path, data, options) {
+  }
+  window.client = function (host) {
+    return function (path, data, options) {
       return http(host + path, data || {}, options || {})
     }
   }
-}())
+})()

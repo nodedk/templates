@@ -1,9 +1,4 @@
 module.exports = async function ($) {
-  var host =
-    process.env.NODE_ENV == 'production'
-      ? 'https://waveorb.com/api'
-      : 'http://localhost:5000'
-
   return /* HTML */ `
     <!DOCTYPE html>
     <html lang="${$.lang}">
@@ -15,7 +10,7 @@ module.exports = async function ($) {
         <link rel="icon" type="image/png" href="/img/favicon.png" />
         ${$.script('/bundle.js')} ${$.style('/bundle.css')}
         <script>
-          window.api = waveorb('${host}')
+          window.api = client('${$.app.config.env.host}')
         </script>
         ${process.env.NODE_ENV == 'development' ? $.script('/js/dev.js') : ''}
       </head>
@@ -33,7 +28,7 @@ module.exports = async function ($) {
         <div id="flash"></div>
         <main>${$.page.content}</main>
         <footer>
-          With 💖 from <a href="https://eldoy.com">Eldøy Tech AS</a>
+          Created by <a href="https://eldoy.com">Eldøy Tech AS</a>
         </footer>
         <script>
           flash()

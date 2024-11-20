@@ -1,9 +1,0 @@
-bundle:
-  js:
-    - /js/haka.js
-    - /js/waveorb.js
-    - /js/util.js
-    - /js/app.js
-  css:
-    - /css/reset.css
-    - /css/app.css

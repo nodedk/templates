@@ -8,7 +8,7 @@ Used by the create command in the `@nodedk/app` CLI.
 
 ```sh
 # Change to the template directory
-cd base
+cd basic
 
 # Install packages
 npm run install
