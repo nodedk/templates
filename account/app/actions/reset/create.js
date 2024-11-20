@@ -19,19 +19,19 @@ module.exports = async function ($) {
   const account = await $.db('account').get({ email })
   if (!account) {
     return {
-      error: { message: $.t('actions.login.forgot_password.account_not_found') }
+      error: { message: $.t('actions.forgot_password.account_not_found') }
     }
   }
   const key = $.tools.uuid()
   const expires_at = new Date().getTime() + 15 * 6e4
 
   if (process.env.NODE_ENV != 'test') {
-    $.mailer.send(
-      'reset-mail',
-      $,
-      { to: email, from: $.app.config.env.email },
-      { key }
-    )
+    $.mailer.send({
+      subject: 'Reset Password',
+      html: $.app.mail.reset($, { key }),
+      to: email,
+      from: $.app.config.env.email
+    })
   }
   return await $.db('reset').create({
     key,

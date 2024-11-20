@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+var crypto = require('crypto')
 
 module.exports = async function ($) {
   await $.filters(['setup-site', 'authenticate', 'guest-required'])
@@ -40,14 +40,16 @@ module.exports = async function ($) {
     }
   })
 
-  const { values = {} } = $.params
-  let { email, name, password } = values
+  var { values = {} } = $.params
+  var { email, name, password } = values
   password = $.tools.hash(password)
-  const md5 = $.tools.md5(email)
-  const hash = $.tools.hash(email)
-  const color = $.helpers.getColor()
+  var md5 = $.tools.md5(email)
+  var hash = $.tools.hash(email)
+  var color = $.tools.colorize()
+
   if (process.env.NODE_ENV != 'test') {
-    $.mailer.send('signup-mail', $, {
+    $.mailer.send({
+      html: $.app.mail.signup($),
       to: email,
       from: $.app.config.env.email
     })

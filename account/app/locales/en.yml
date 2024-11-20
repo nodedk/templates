@@ -1,4 +1,3 @@
-# LAYOUTS
 layouts:
   description: Days In a Row Motivation App
   title: Days In a Row
@@ -82,3 +81,12 @@ button:
   search: Search
   contribute: Contribute now
   payment: Go to payment
+
+actions:
+  login:
+    account_not_found: Account not found
+  forgot_password:
+    account_not_found: Account not found
+
+filters:
+  already_logged_in: You are already logged in

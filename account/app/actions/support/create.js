@@ -19,7 +19,7 @@ module.exports = async function ($) {
   var { email, subject, content } = values
   if (process.env.NODE_ENV != 'test') {
     $.mailer.send({
-      text: content,
+      text: $.app.mail.support($, { content }),
       subject,
       to: email,
       from: $.app.config.env.email

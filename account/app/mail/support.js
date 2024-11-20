@@ -1,8 +1,6 @@
-module.exports = async function ($, data) {
-  return {
-    format: 'markdown',
-    content: `
-      ${data.content}
+module.exports = function ($, { content }) {
+  return `
+      ${content}
       ${(function () {
         if ($.account) {
           return `
@@ -14,5 +12,4 @@ module.exports = async function ($, data) {
         return ''
       })()}
     `
-  }
 }
