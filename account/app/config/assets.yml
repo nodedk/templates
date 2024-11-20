@@ -1,8 +1,8 @@
 bundle:
   js:
-    - /js/haka.js
-    - /js/waveorb.js
-    - /js/util.js
+    - /js/element.js
+    - /js/client.js
+    - /js/window.js
     - /js/app.js
   css:
     - /css/base.css

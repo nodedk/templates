@@ -16,7 +16,7 @@ module.exports = function ($) {
       <script>
         window.account = ${JSON.stringify($.account)}
         window.avatar = ${$.app.views.avatar}
-        window.api = waveorb('${$.app.config.env.host}')
+        window.api = client('${$.app.config.env.host}')
       </script>
       ${process.env.NODE_ENV == 'development'
         ? '<script src="/js/dev.js"></script>'
