@@ -14,7 +14,7 @@
     "cmd": "ndk cmd",
     "migrate": "ndk migrate",
     "locales": "ndk locales",
-    "install": "node install.js"
+    "install": "ndk install"
   },
   "repository": {
     "type": "git",
