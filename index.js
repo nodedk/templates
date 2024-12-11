@@ -29,8 +29,6 @@ async function main() {
     template = await askTemplate()
   } while (!template)
 
-  console.log({ template })
-
   var root = process.cwd()
   var source = path.join(__dirname, template)
   var target = path.join(root, name)
