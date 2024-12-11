@@ -13,8 +13,7 @@
     "generate": "ndk generate",
     "cmd": "ndk cmd",
     "migrate": "ndk migrate",
-    "locales": "ndk locales",
-    "install": "ndk install"
+    "locales": "ndk locales"
   },
   "repository": {
     "type": "git",

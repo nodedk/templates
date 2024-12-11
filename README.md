@@ -2,7 +2,7 @@
 
 NodeDK templates.
 
-Used by the create command in the `@nodedk/app` CLI.
+Used by the create command in the `@nodedk/cli` CLI.
 
 ### Usage
 

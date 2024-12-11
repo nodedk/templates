@@ -1,0 +1,16 @@
+{
+  "name": "@nodedk/templates",
+  "version": "0.1.0",
+  "description": "NodeDK templates",
+  "main": "index.js",
+  "bin": {
+    "@nodedk/templates": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vidar Eldøy <vidar@eldoy.com>",
+  "dependencies": {
+    "@nodedk/tools": "^0.1.0"
+  }
+}
