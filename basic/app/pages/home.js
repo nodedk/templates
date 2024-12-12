@@ -1,5 +1,6 @@
 module.exports = async function ($) {
   $.page.title = 'Ready to create'
+  $.page.layout = 'main'
 
   return /* HTML */ `
     <h1>Welcome to your new application.</h1>

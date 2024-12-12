@@ -1,5 +1,6 @@
 module.exports = async function ($) {
   $.page.title = 'About'
+  $.page.layout = 'main'
 
   return /* HTML */ `
     <h1>The best framework in the world.</h1>

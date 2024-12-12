@@ -1,7 +1,7 @@
 module.exports = async function ($) {
   return /* HTML */ `
     <!DOCTYPE html>
-    <html lang="${$.lang}">
+    <html lang="${$.req.lang}">
       <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -17,7 +17,7 @@ module.exports = async function ($) {
       <body>
         <header>
           <nav>
-            <a href="${$.link('index')}">Home</a>
+            <a href="${$.link('home')}">Home</a>
             <a href="${$.link('about')}">About</a>
           </nav>
         </header>
